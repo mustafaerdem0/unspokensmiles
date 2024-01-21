@@ -1,0 +1,326 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+/* BOOTSTRAP ICON */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.involvedDom{
+    height: 95vh;
+    background: 
+        linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
+        url(static/img/pexels-kwaku-griffin-14346814.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+}
+.involvedDom-behind{
+    height: 90%;
+    padding-left: 25px;
+}
+.involvedDom-behind-row{
+    height: 100%;
+}
+/* SOL TARAF */
+.involvedDom-behind-left{
+    align-self: center;
+}
+.involvedDom-left-title h1{
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+}
+.involvedDom-left-paragraph{
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.involvedDom-left-buttons{
+    display: flex;
+    column-gap: 10px;
+}
+.involvedDom-left-buttons-donate button{
+    background-color: black;
+    color: #fff;
+    padding: 17px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+}
+.involvedDom-left-butttons-take button{
+    background-color: #3E37FF;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    font-size: 15px;
+    transition: background-color .3s,color .3s,border .3s;
+}
+.involvedDom-left-butttons-take button:hover{
+    color: #fff;
+    background-color: black;
+    border: 2px solid black;
+}
+
+/* MAIN FIRST BÖLÜM */
+.involved-first{
+    margin-top: 4rem;
+}
+.first-header-title h1{
+    font-size: 65px;
+    color: #3E37FF;
+    font-weight: 600;
+}
+.first-header-border{
+    width: 60px;
+    height: 5px;
+    background-color: #3E37FF;
+    position: relative;
+    left: 15px;
+    border-radius: 30px;
+}
+.first-header-border::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    background-color: #3E37FF;
+    border-radius: 30px;
+}
+
+/* CART YAPILARI */
+.involved-first-row{
+    margin-top: 4rem;
+}
+.involved-first-cart-image{
+    overflow: hidden;
+    position: relative;
+}
+.involved-first-cart-image img{
+    width: 100%;
+    transition: transform .5s;
+    border-radius: 10px;
+}
+.involved-first-cart-box{
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 90%;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -20px;
+}
+.cart-text-title h5{
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: color .5s;
+}
+.involved-first-cart:hover .involved-first-cart-image img{
+    transform: scale(1.1);
+}
+.involved-first-cart:hover .cart-text-title h5{
+    color: #3E37FF;
+}
+/* MAIN FIRST BÖLÜM */
+
+/* SECTION BÖLÜM */
+.involved-second{
+    margin-top: 5rem;
+}
+.involved-second-box{
+    border: 1.2px solid #3E37FF;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+.boxCart-image img{
+    width: 100%;
+    border-radius: 15px;
+}
+.boxCart-text{
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.boxCart-text-title h4{ 
+    font-size: 24px;
+    color: #3E37FF;
+    font-weight: 700;
+}
+.boxCart-buttons{
+    display: flex;
+    padding: 20px;
+    column-gap: 20px;
+}
+.box-cart-btn button{
+    background-color: #3E37FF;
+    border: none;
+    border-radius: 30px;
+}
+.box-cart-btn-link{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* END CONTENT CSS */
+.endContent-container{
+    padding: 3.5rem 0 2rem 0;
+}
+.endContent-text-title h1{
+    font-size: 65px;
+    font-weight: 600;
+    color: #fff;
+}
+.endContent-text-subTitle{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 25px;
+}
+.endContent-button{
+    align-self: center;
+}
+.endContent-btn{
+    text-align: end;
+    padding-right: 10px;
+}
+.endContent-btn button{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background-color: black;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .3s;
+}
+.endContent-btn button a{
+    text-decoration: none;
+    color: #fff;
+}
+.endContent-btn button:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+/* NAVBAR RESPONSIVE TASARIM CSS KODLAR */
+@media(max-width:1200px){
+    /* HEADER */
+    .involvedDom-behind{
+        height: auto;
+        margin-top: 70px;
+    }
+    .involvedDom-left-title h1{
+        font-size: 50px;
+    }
+    .involvedDom-left-paragraph{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .involvedDom-left-buttons-donate button{
+        padding: 10px 20px;
+    }
+    .involvedDom-left-butttons-take button{
+        padding: 8px 22px;
+    }
+    .first-header-title h1{
+        font-size: 50px;
+    }
+    .endContent-text-title h1{
+        font-size: 50px;
+    }
+}
+@media(max-width:992px){
+    /* HEADER */
+    .involvedDom{
+        height: auto !important;
+    }
+    .involvedDom-behind{
+        margin-top: 0px;
+    }
+    .involvedDom-left-title h1{
+        font-size: 50px;
+    }
+    .involvedDom-left-paragraph{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .first-header-title h1{
+        font-size: 40px;
+    }
+    .involvedDom-behind-left{
+        align-self: start;
+        padding-bottom: 50px;
+    }
+    .involved-first-row{
+        justify-content: center;
+    }
+    .endContent-container{
+        padding: 0.5rem 0 0.5rem 0;
+    }
+    .endContent-row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .endContent-text{
+        text-align: center;
+    }
+    .endContent-text-title h1{
+        font-size: 36px;
+    }
+    .endContent-text-subTitle{
+        font-size: 15px;
+    }
+    .endContent-button{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .endContent-btn button{
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+@media(max-width:576px){
+    .involvedDom-behind-row{
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+    }
+    .involvedDom-behind-left{
+        margin-top: 30px;
+    }
+    .involvedDom-left-title h1{
+        font-size: 32px;
+    }
+    .involvedDom-left-paragraph h5{
+        font-size: 1rem;
+    }
+    .first-header-title h1{
+        font-size: 32px;
+    }
+    .involved-first-cart-box{
+        padding: 20px;
+    }
+    .box-cart-btn-link{
+        font-size: 14px;
+    }
+    .endContent{
+        margin-top: 1rem !important;
+    }
+}

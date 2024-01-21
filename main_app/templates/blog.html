@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css-link %}
+<link rel="stylesheet" href="{% static 'style/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'style/blog.css' %}">
+<link rel="stylesheet" href="{% static 'style/footer.css' %}">
+{% endblock css-link %}
+
+
+
+{% block site-content %}
+    <style>
+        .blogDom{
+            height: 80vh;
+            background: 
+                linear-gradient(rgba(62, 55, 255, 0.8), rgba(62, 55, 255, 0.8)),
+                url(static/img/pexels-pixabay-262508.jpg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
+
+    <!-- HEADER -->
+    <header class="blogDom">
+        <!-- NAVBAR -->
+        <nav class="container navbar-container">
+            {% include "partials/_navbar.html" %}
+        </nav>
+        <!-- HEADER ORTA KISIM -->
+        <section class="container blogDom-behind">
+            <!-- SOL TARAF -->
+            <div class="row blogDom-behind-row">
+                <article class="col-lg-8 blogDom-behind-left">
+                    <div class="blogDom-left">
+                        <div class="blogDom-left-title">
+                            <h1>Add Impact To</h1>
+                            <h1>Your Inbox</h1>
+                        </div>
+                        <div class="blogDom-left-paragraph">
+                            <h5>Stay updated with the latest news from.</h5>
+                        </div>
+                        <div class="blogDom-left-buttons">
+                            <div class="blogDom-left-buttons-donate">
+                                <a href="{% url 'signup' %}">
+                                    <button>Sign Up</button>
+                                </a>
+                            </div>
+                            <div class="blogDom-left-butttons-take">
+                                <button>Take Action</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN ALAN -->
+    <main class="container blogMain">
+        <div class="row blogMain-row">
+            <section class="col-12 col-xl-8 blogMain-left">
+                <div class="row blogMain-left-row justify-content-around row-gap-5">
+                    {% for blogContent in blog  %}
+                      
+               
+                    <article class="col-md-6 col-lg-6 blogMain-left-col">
+                        <div class="blogMain-left-cards">
+                            <a href="{{blogContent.get_absolute_url}}" class="leftCards-container">
+                                <div class="leftCards-container-image">
+                                    <img src="{{blogContent.cover_image.url}}" alt="">
+                                    <div class="leftCards-container-image-etiket">
+                                        <span class="image-etiket">Story</span>
+                                    </div>
+                                </div>
+                                <div class="leftCards-container-content">
+                                    <div class="leftCards-container-text">
+                                        <div class="leftCards-text-title">
+                                            <h5>{{blogContent.title}}</h5>
+                                        </div>
+                                        <div class="leftCards-text-content">
+                                            <p class="leftCards-text-paragraph text-black-50">{{blogContent.content|striptags}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="leftCards-container-alt">
+                                    <div class="leftCards-alt-section">
+                                        <div class="altSection-title">
+                                            <p>GÖNÜLLÜ VAKIF</p>
+                                        </div>
+                                        <div class="altSection-date">
+                                            <span class="date-day">{{blogContent.created_date}}</span>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+            <section class="col-12 col-xl-4 blogMain-right">
+                <article class="blogMain-first">
+                    <div class="blogMain-first-founder">
+                        <div class="firstFounder-title blogMain-title">
+                            <span>Meet To Founder</span>
+                        </div>
+                        <div class="firstFounder-image">
+                            <img src="{% static 'img/pexels-serkan-göktay-64385.jpg' %}" alt="">
+                        </div>
+                        <div class="firstFounder-content">
+                            <div class="founderContent-title">
+                                <h5>J.Jacques Rousseau</h5>
+                            </div>
+                            <div class="founderContent-text">
+                                <p>Described as “a visionary leader and unshakable optimist,” J.Jacques Rousseau has devoted his entire professional life leveraging capitalism and philanthropy — to direct attention to people who have been left behind.</p>
+                            </div>
+                            <div class="founderContent-social">
+                                <ul class="contentSocial-lists">
+                                    <li class="contentSocial-list">
+                                        <a href="#" class="contentSocial-link">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li class="contentSocial-list">
+                                        <a href="#" class="contentSocial-link">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="contentSocial-list">
+                                        <a href="#" class="contentSocial-link">
+                                            <i class="bi bi-twitter-x"></i>
+                                        </a>
+                                    </li>
+                                    <li class="contentSocial-list">
+                                        <a href="#" class="contentSocial-link">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="blogMain-second">
+                    <div class="blogMain-allPosts">
+                        <div class="allPosts-title blogMain-title">
+                            <span>Recent Posts</span>
+                        </div>
+                        <div class="row allPosts-content">
+                            {% for blogside  in blog  %}
+                            <div class="col-md-6 col-lg-12 allPosts-content-section">
+                                <a href="{{blogside.get_absolute_url}}" class="allPosts-content-link">
+                                    <div class="allPosts-content-image">
+                                        <img src="{{blogside.cover_image.url}}" alt="">
+                                    </div>
+                                    <div class="allPosts-content-text">
+                                        <div class="allPosts-text-title">
+                                            <h6>{{blogside.title}}</h6>
+                                        </div>
+                                        <div class="allPosts-text-subTitle">
+                                            <span class="subTitle-day">{{blogside.created_date}}</span>
+                                        
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </article>
+                <article class="blogMain-third">
+                    <div class="blogMain-followUs">
+                        <div class="followUs-title blogMain-title">
+                            <span>Follow Us On</span>
+                        </div>
+                        <div class="followUs-icons">
+                            <ul class="followUs-icons-lists">
+                                <li class="followUs-icons-list-facebook">
+                                    <a href="#" class="followUs-icons-link">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="followUs-icons-list-linkedin">
+                                    <a href="#" class="followUs-icons-link">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="followUs-icons-list-twitter">
+                                    <a href="#" class="followUs-icons-link">
+                                        <i class="bi bi-twitter-x"></i>
+                                    </a>
+                                </li>
+                                <li class="followUs-icons-list-pinterest">
+                                    <a href="#" class="followUs-icons-link">
+                                        <i class="bi bi-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li class="followUs-icons-list-message">
+                                    <a href="#" class="followUs-icons-link">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    {% include "partials/_footer.html" %}
+    
+    <script src="{% static 'js/index.js' %}"></script>  
+    
+{% endblock site-content %}

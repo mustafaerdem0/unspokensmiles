@@ -1,0 +1,113 @@
+{% load static %}
+
+<div class="row navbar-row">
+    <!-- NAVBAR LOGO IMAGE -->
+    <div class="col-lg-3 navbar-logo">
+      <div class="navbar-logo-image">
+        <a href="/">
+          <img src="{% static 'img/logo.png' %}" alt="" />
+        </a>
+      </div>
+    </div>
+    <div class="col-8 col-sm-5 col-lg-5 col-xl-6 navbar-menu">
+      <!-- HAMBURGER ICON(RESPONSIVE GORUNUM İLK BASTA DİSPLAY NONE) -->
+      <div class="navbar-hamburger-icon">
+        <span class="hamburger-icon">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+      </div>
+      <!-- MENU LİSTESİ -->
+      <div class="navbar-menu-list">
+        <ul class="navbarList">
+      
+     
+          <li class="navbar-dropdown">
+            <div class="navbar-dropdown-button">
+              <button class="dropdown-button">
+                <a class="text-decoration-none text-white" href="{% url 'involved' %}">GET INVOLVED</a>
+              </button>
+              <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+            </div>
+            <!-- DROPDOWN MENU -->
+            <div class="navbar-dropdown-hover">
+              <ul class="dropdown-hover-list">
+                <li class="dropdown-link">
+                  <a href="#">PARTNERSHIP</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">LEADERSHIP COUNCIL</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">TAKE THE PLEDGE</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">VOLUNTEER</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">THE GLOBAL GOALS</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="navbar-dropdown">
+            <div class="navbar-dropdown-button">
+              <button class="dropdown-button">
+                <a class="text-decoration-none text-white" href="{% url 'aboutus' %}">ABOUT US</a>                     
+              </button>
+              <span class="navbar-icon"><i class="fa-solid fa-caret-down"></i></span>
+            </div>
+            <!-- DROPDOWN MENU -->
+            <div class="navbar-dropdown-hover">
+              <ul class="dropdown-hover-list">
+                <li class="dropdown-link">
+                  <a href="#">LEADERSHIP TEAM</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">TRANSPARENCY</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="#">CAREERS</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="{% url 'blog' %}">BLOG</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+  
+          <li class="navbar-dropdown" >
+            <button class="dropdown-button">
+            <a class="text-decoration-none text-white" href="{% url 'blog' %}">BLOG</a>  
+            </button>
+          </li>
+          <li class="navbar-dropdown" >
+            <button class="dropdown-button">
+            <a class="text-decoration-none text-white" href="{% url 'donate' %}">DONATE</a>  
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- NAVBAR DONATE BUTTON -->
+    <div class="col-4 col-sm-7 col-lg-4 col-xl-3 navbar-donate" id="donate-yonlendirme">
+      <div class="navbar-donete-button displayNone-buuton">
+        <a class="text-white text-decoration-none" href="{% url 'donate' %}"> 
+          <button class="donateButton">DONATE NOW</button>
+        </a>
+      </div>
+      {% if request.user.is_authenticated %}
+      <div class="navbar-donete-button ms-2">
+        <a class="text-white text-decoration-none" href="{% url 'profil' %}"> 
+        <button class="donateButton">
+            <span><i class="fa-solid fa-user"></i></span>
+            <span>{{request.user|title}}</span>
+        </button></a>
+      </div>
+        {% else %}
+        <div class="navbar-donete-button ms-2">
+          <a class="text-white text-decoration-none" href="{% url 'signup' %}"> <button class="donateButton">Kayıt/Giriş</button></a>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
